@@ -1,0 +1,11 @@
+# SPA fallback for Apache / cPanel shared hosting.
+# Serves index.html for any path that isn't a real file or folder,
+# so React Router handles the route (and renders the 404 page).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

@@ -1,0 +1,3 @@
+# SPA fallback for Netlify — any unmatched path serves index.html,
+# so React Router handles the route (and renders the 404 page).
+/*    /index.html   200

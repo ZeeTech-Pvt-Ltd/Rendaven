@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="glow" cx="0.15" cy="0" r="0.9">
+      <stop offset="0" stop-color="#0150cf" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#002867" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#002867"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- blueprint grid -->
+  <g stroke="#84b5fa" stroke-opacity="0.1" stroke-width="1">
+    <path d="M56 0 V630 M112 0 V630 M168 0 V630 M224 0 V630 M280 0 V630 M336 0 V630 M392 0 V630 M448 0 V630 M504 0 V630 M560 0 V630 M616 0 V630 M672 0 V630 M728 0 V630 M784 0 V630 M840 0 V630 M896 0 V630 M952 0 V630 M1008 0 V630 M1064 0 V630 M1120 0 V630 M1176 0 V630"/>
+    <path d="M0 56 H1200 M0 112 H1200 M0 168 H1200 M0 224 H1200 M0 280 H1200 M0 336 H1200 M0 392 H1200 M0 448 H1200 M0 504 H1200 M0 560 H1200"/>
+  </g>
+
+  <g transform="translate(80 110)">
+    <rect width="72" height="72" fill="#0150cf"/>
+    <text x="36" y="53" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="46" fill="#ffffff">R</text>
+    <text x="94" y="56" font-family="Arial, sans-serif" font-weight="700" font-size="52" fill="#ffffff" letter-spacing="1">Rendaven</text>
+  </g>
+
+  <text x="80" y="330" font-family="Arial, sans-serif" font-weight="700" font-size="72" fill="#ffffff">AI-Powered Trading,</text>
+  <text x="80" y="420" font-family="Arial, sans-serif" font-weight="700" font-size="72" fill="#84b5fa">Engineered for You.</text>
+
+  <text x="80" y="500" font-family="Arial, sans-serif" font-size="28" fill="#a9c2e8">Bitcoin · Ethereum · 300+ assets — 256-bit encryption, 98% cold storage.</text>
+
+  <rect x="80" y="540" width="300" height="12" rx="6" fill="#0150cf"/>
+  <rect x="400" y="540" width="140" height="12" rx="6" fill="#84b5fa"/>
+</svg>
