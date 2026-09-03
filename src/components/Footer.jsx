@@ -14,7 +14,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h4>{FOOTER.navTitle}</h4>
+            <h3>{FOOTER.navTitle}</h3>
             <ul>
               {NAV_LINKS.filter((item) => item.to !== '/').map((item) => (
                 <li key={item.label}>
@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h4>{FOOTER.legalTitle}</h4>
+            <h3>{FOOTER.legalTitle}</h3>
             <ul>
               {FOOTER.legalLinks.map((item) => (
                 <li key={item.label}>
@@ -36,7 +36,7 @@ export default function Footer() {
           </div>
 
           <div className="footer-col footer-contact">
-            <h4>{FOOTER.contactTitle}</h4>
+            <h3>{FOOTER.contactTitle}</h3>
             <ul>
               <li>
                 <Icon name="mail" size={17} />

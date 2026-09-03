@@ -72,7 +72,7 @@ export default function TestimonialsCarousel() {
             <span className="testi-card__quote" aria-hidden="true">
               “
             </span>
-            <div className="testi-card__stars" aria-label={`${item.stars} out of 5 stars`}>
+            <div className="testi-card__stars" role="img" aria-label={`${item.stars} out of 5 stars`}>
               {Array.from({ length: 5 }, (_, i) => (
                 <Icon key={i} name="star" size={14} filled={i < item.stars} />
               ))}
@@ -104,14 +104,14 @@ export default function TestimonialsCarousel() {
         >
           <Icon name="arrow-right" size={18} style={{ transform: 'rotate(180deg)' }} />
         </button>
-        <div className="testi-dots" role="tablist" aria-label="Testimonial pages">
+        <div className="testi-dots" aria-label="Testimonial pages">
           {Array.from({ length: pages }, (_, i) => (
             <button
               key={i}
               className={`testi-dot${i === index ? ' is-active' : ''}`}
               type="button"
               aria-label={`Go to testimonial page ${i + 1}`}
-              aria-current={i === index}
+              aria-pressed={i === index}
               onClick={() => goTo(i)}
             />
           ))}
@@ -134,7 +134,7 @@ export function RatingBadge() {
     <div className="testi-rating">
       <span className="testi-rating__score">{RATING.score}</span>
       <div>
-        <div className="testi-rating__stars" aria-label={`${RATING.score} out of 5 stars`}>
+        <div className="testi-rating__stars" role="img" aria-label={`${RATING.score} out of 5 stars`}>
           {Array.from({ length: RATING.stars }, (_, i) => (
             <Icon key={i} name="star" size={16} filled />
           ))}

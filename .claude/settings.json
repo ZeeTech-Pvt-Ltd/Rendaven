@@ -56,7 +56,18 @@
       "Bash(curl -s --max-time 10 \"https://api.coincap.io/v2/assets?ids=bitcoin,ethereum,tether,binance-coin,solana,xrp,cardano,dogecoin\" -H \"Origin: http://localhost:5178\" -D - -o /tmp/coincap.json)",
       "Bash(curl -s --max-time 10 \"https://api.coincap.io/v2/assets?ids=bitcoin,ethereum,tether,binance-coin,solana,xrp,cardano,dogecoin\" -H \"Origin: http://localhost:5178\" -D /tmp/cc_headers.txt -o /tmp/coincap.json)",
       "Bash(curl -sv --max-time 12 \"https://api.coincap.io/v2/assets?ids=bitcoin,ethereum\" -o /tmp/cc.json)",
-      "Bash(curl -s --max-time 12 'https://api.binance.com/api/v3/ticker/24hr?symbols=%5B%22BTCUSDT%22,%22ETHUSDT%22,%22SOLUSDT%22,%22XRPUSDT%22,%22ADAUSDT%22,%22DOGEUSDT%22,%22BNBUSDT%22%5D' -H \"Origin: http://localhost:5178\" -D /tmp/bn_h.txt -o /tmp/bn.json)"
+      "Bash(curl -s --max-time 12 'https://api.binance.com/api/v3/ticker/24hr?symbols=%5B%22BTCUSDT%22,%22ETHUSDT%22,%22SOLUSDT%22,%22XRPUSDT%22,%22ADAUSDT%22,%22DOGEUSDT%22,%22BNBUSDT%22%5D' -H \"Origin: http://localhost:5178\" -D /tmp/bn_h.txt -o /tmp/bn.json)",
+      "WebFetch(domain:pagespeed.web.dev)",
+      "Bash(curl -s --max-time 120 \"https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https://rendaven.com&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo\" -o /tmp/psi.json)",
+      "Bash(node -e ' *)",
+      "Bash(curl -s --max-time 120 \"https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=https://rendaven.com&strategy=mobile&category=performance&category=accessibility&category=best-practices&category=seo\" -o psi.json)",
+      "Bash(rm psi.json)",
+      "Bash(ls \"C:\\\\Users\\\\samee\\\\AppData\\\\Local\\\\ms-playwright\" 2>/dev/null | head -5; find \"C:\\\\Users\\\\samee\\\\AppData\\\\Local\\\\ms-playwright\" -name \"chrome.exe\" -path \"*chrome*\" 2>/dev/null | head -3)",
+      "Read(//c/Users/samee/AppData/Local/ms-playwright/**)",
+      "Bash(CHROME_PATH=\"C:\\\\Users\\\\samee\\\\AppData\\\\Local\\\\ms-playwright\\\\chromium-1217\\\\chrome-win64\\\\chrome.exe\" npx --yes lighthouse \"https://rendaven.com\" --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --screenEmulation.mobile --output=json --output-path=lh.json --chrome-flags=\"--headless --no-sandbox\" --quiet)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:4173/)",
+      "Bash(CHROME_PATH=\"C:\\\\Users\\\\samee\\\\AppData\\\\Local\\\\ms-playwright\\\\chromium-1217\\\\chrome-win64\\\\chrome.exe\" npx --yes lighthouse \"http://localhost:4173/\" --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --screenEmulation.mobile --output=json --output-path=lh2.json --chrome-flags=\"--headless --no-sandbox\" --quiet)",
+      "Bash(rm -f lh2.json)"
     ],
     "additionalDirectories": [
       "\\tmp"
