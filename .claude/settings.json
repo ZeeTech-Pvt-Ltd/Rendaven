@@ -78,7 +78,10 @@
       "Bash(sed -i 's|\"build\": \"vite build && node scripts/inline-css.mjs\"|\"build\": \"vite build\"|' package.json)",
       "Bash(CHROME_PATH=\"C:\\\\Users\\\\samee\\\\AppData\\\\Local\\\\ms-playwright\\\\chromium-1217\\\\chrome-win64\\\\chrome.exe\" npx --yes lighthouse \"http://localhost:4173/\" --only-categories=performance --form-factor=mobile --screenEmulation.mobile --output=json --output-path=lh7.json --chrome-flags=\"--headless --no-sandbox\" --quiet)",
       "Bash(awk '{print $5}')",
-      "Bash(xargs -r taskkill //F //PID)"
+      "Bash(xargs -r taskkill //F //PID)",
+      "Bash(curl -s --max-time 15 \"https://rendaven.com/\" -o /tmp/live.html)",
+      "Bash(CHROME_PATH=\"C:\\\\Users\\\\samee\\\\AppData\\\\Local\\\\ms-playwright\\\\chromium-1217\\\\chrome-win64\\\\chrome.exe\" npx --yes lighthouse \"https://rendaven.com/\" --only-categories=performance --form-factor=mobile --screenEmulation.mobile --output=json --output-path=lhlive.json --chrome-flags=\"--headless --no-sandbox\" --quiet)",
+      "Bash(rm lhlive.json)"
     ],
     "additionalDirectories": [
       "\\tmp"
