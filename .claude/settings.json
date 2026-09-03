@@ -50,7 +50,13 @@
       "Bash(curl -s --max-time 20 -o benefits-640.avif \"https://marblerendaven.com/assets/img/responsive/blue/benefits-640.avif\")",
       "Bash(curl -s --max-time 10 \"https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,ripple,cardano,dogecoin,binancecoin,tether&vs_currencies=usd&include_24hr_change=true\" -H \"Origin: http://localhost:5178\" -D - -o /tmp/price.json)",
       "Bash(curl -s --max-time 20 -o footer-1280.avif \"https://marblerendaven.com/assets/img/responsive/blue/footer-1280.avif\")",
-      "Bash(rm -f seo.mjs)"
+      "Bash(rm -f seo.mjs)",
+      "Bash(sed -i \"s/await page.locator\\('.btn--block'\\).click\\(\\)/await page.locator\\('button[type=\\\\\"submit\\\\\"]'\\).first\\(\\).click\\(\\)/\" journey.mjs)",
+      "Bash(node journey.mjs)",
+      "Bash(curl -s --max-time 10 \"https://api.coincap.io/v2/assets?ids=bitcoin,ethereum,tether,binance-coin,solana,xrp,cardano,dogecoin\" -H \"Origin: http://localhost:5178\" -D - -o /tmp/coincap.json)",
+      "Bash(curl -s --max-time 10 \"https://api.coincap.io/v2/assets?ids=bitcoin,ethereum,tether,binance-coin,solana,xrp,cardano,dogecoin\" -H \"Origin: http://localhost:5178\" -D /tmp/cc_headers.txt -o /tmp/coincap.json)",
+      "Bash(curl -sv --max-time 12 \"https://api.coincap.io/v2/assets?ids=bitcoin,ethereum\" -o /tmp/cc.json)",
+      "Bash(curl -s --max-time 12 'https://api.binance.com/api/v3/ticker/24hr?symbols=%5B%22BTCUSDT%22,%22ETHUSDT%22,%22SOLUSDT%22,%22XRPUSDT%22,%22ADAUSDT%22,%22DOGEUSDT%22,%22BNBUSDT%22%5D' -H \"Origin: http://localhost:5178\" -D /tmp/bn_h.txt -o /tmp/bn.json)"
     ],
     "additionalDirectories": [
       "\\tmp"

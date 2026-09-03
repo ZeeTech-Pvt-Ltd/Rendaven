@@ -1,8 +1,12 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Icon from '../components/Icon'
 import { FINAL_CTA } from '../data/content'
 
 export default function FinalCta() {
+  const { pathname } = useLocation()
+  // On the homepage the FAQ lives in the #faq section; elsewhere it's a route.
+  const faqLink = pathname === '/' ? { href: '#faq' } : { to: '/faq' }
+
   return (
     <section className="final-cta">
       <div className="container">
@@ -13,9 +17,15 @@ export default function FinalCta() {
             Open your free account
             <Icon name="arrow-right" size={19} />
           </Link>
-          <a className="btn btn--ghost-dark btn--lg" href="#faq">
-            Read the FAQ
-          </a>
+          {faqLink.to ? (
+            <Link className="btn btn--ghost-dark btn--lg" to={faqLink.to}>
+              Read the FAQ
+            </Link>
+          ) : (
+            <a className="btn btn--ghost-dark btn--lg" href={faqLink.href}>
+              Read the FAQ
+            </a>
+          )}
         </div>
         <div className="final-cta__trust" data-reveal>
           <Icon name="lock" size={14} />
