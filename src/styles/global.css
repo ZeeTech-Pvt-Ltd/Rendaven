@@ -2075,6 +2075,52 @@ img.testi-card__avatar {
   }
 }
 
+/* ------------------------------ Page loading --------------------------- */
+
+.page-loading {
+  min-height: 45vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.page-loading__mark {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(140deg, var(--teal), var(--teal-deep));
+  clip-path: var(--chamfer-sm);
+  animation: page-loading-pulse 1.1s ease-in-out infinite;
+}
+
+.page-loading__text {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+@keyframes page-loading-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-loading__mark {
+    animation: none;
+  }
+}
+
 /* ------------------------------ Reveal --------------------------------- */
 
 [data-reveal] {

@@ -6,19 +6,22 @@ import './styles/global.css'
 
 // Pages are lazy-loaded per route to keep the initial bundle small —
 // Home is the entry bundle; everything else splits into its own chunk.
+// Loaders come from loaders.js so header/footer hover-prefetch shares
+// the exact same module (and browser cache) as navigation.
 import Home from './pages/Home'
-const AboutUs = lazy(() => import('./pages/AboutUs'))
-const Product = lazy(() => import('./pages/Product'))
-const Offer = lazy(() => import('./pages/Offer'))
-const Team = lazy(() => import('./pages/Team'))
-const Contacts = lazy(() => import('./pages/Contacts'))
-const Faqs = lazy(() => import('./pages/Faqs'))
-const SignUp = lazy(() => import('./pages/SignUp'))
-const SignIn = lazy(() => import('./pages/SignIn'))
-const ThankYou = lazy(() => import('./pages/ThankYou'))
-const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
-const TermsOfUse = lazy(() => import('./pages/TermsOfUse'))
-const RiskDisclosure = lazy(() => import('./pages/RiskDisclosure'))
+import { ROUTE_LOADERS } from './pages/loaders'
+const AboutUs = lazy(ROUTE_LOADERS['/about-us'])
+const Product = lazy(ROUTE_LOADERS['/product'])
+const Offer = lazy(ROUTE_LOADERS['/offer'])
+const Team = lazy(ROUTE_LOADERS['/team'])
+const Contacts = lazy(ROUTE_LOADERS['/contact-us'])
+const Faqs = lazy(ROUTE_LOADERS['/faq'])
+const SignUp = lazy(ROUTE_LOADERS['/sign-up'])
+const SignIn = lazy(ROUTE_LOADERS['/sign-in'])
+const ThankYou = lazy(ROUTE_LOADERS['/thank-you'])
+const PrivacyPolicy = lazy(ROUTE_LOADERS['/privacy'])
+const TermsOfUse = lazy(ROUTE_LOADERS['/terms'])
+const RiskDisclosure = lazy(ROUTE_LOADERS['/risk-disclosure'])
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 createRoot(document.getElementById('root')).render(

@@ -87,7 +87,9 @@
       "Bash(sed -i \"s|const vis = await page.locator\\('.faq-item'\\).first\\(\\).evaluate\\(\\(el\\) => getComputedStyle\\(el\\).closest\\('.faq-list'\\).getAttribute\\('class'\\)\\)|const vis = await page.locator\\('.faq-list'\\).evaluate\\(\\(el\\) => getComputedStyle\\(el\\).opacity\\)|\" preactchk.mjs)",
       "Bash(node preactchk.mjs)",
       "Bash(CHROME_PATH=\"C:\\\\Users\\\\samee\\\\AppData\\\\Local\\\\ms-playwright\\\\chromium-1217\\\\chrome-win64\\\\chrome.exe\" npx --yes lighthouse \"http://localhost:4173/\" --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --screenEmulation.mobile --output=json --output-path=lhfinal.json --chrome-flags=\"--headless --no-sandbox\" --quiet)",
-      "Bash(rm lhfinal.json)"
+      "Bash(rm lhfinal.json)",
+      "Bash(curl -s --max-time 5 http://localhost:4173/)",
+      "Bash(curl -s --max-time 5 http://localhost:4174/)"
     ],
     "additionalDirectories": [
       "\\tmp",

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Logo from './Logo'
 import Icon from './Icon'
 import { NAV_LINKS, FOOTER, SUPPORT_EMAIL } from '../data/content'
+import { prefetchRoute } from '../pages/loaders'
 
 export default function Footer() {
   return (
@@ -18,7 +19,9 @@ export default function Footer() {
             <ul>
               {NAV_LINKS.filter((item) => item.to !== '/').map((item) => (
                 <li key={item.label}>
-                  <Link to={item.to}>{item.label}</Link>
+                  <Link to={item.to} onMouseEnter={() => prefetchRoute(item.to)}>
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
