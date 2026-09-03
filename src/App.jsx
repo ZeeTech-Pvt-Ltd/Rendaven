@@ -13,11 +13,26 @@ function ScrollToTop() {
   return null
 }
 
+// Google Analytics: gtag fires once on page load, so SPA navigations send
+// their own page_view events (and their per-page titles).
+function TrackPageViews() {
+  const location = useLocation()
+  useEffect(() => {
+    if (typeof window.gtag !== 'function') return
+    window.gtag('event', 'page_view', {
+      page_path: location.pathname + location.search,
+      page_title: document.title,
+    })
+  }, [location])
+  return null
+}
+
 export default function App() {
   useReveal()
   return (
     <>
       <ScrollToTop />
+      <TrackPageViews />
       <Header />
       <main>
         <Suspense fallback={null}>

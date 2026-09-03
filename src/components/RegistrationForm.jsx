@@ -34,11 +34,11 @@ async function resolveCountry() {
 }
 
 /**
- * Shared registration form (hero + join CTA + sign-up page), mirroring the
- * established lead-form rules:
+ * Shared registration form (hero + join CTA + sign-up + contact pages):
  * - required first/last name, email, valid international phone, consent
  * - honeypot "website" field: bots that fill it get silently dropped
- * - phone auto-detected via ipapi.co, validated with libphonenumber
+ * - phone field shows flag + dial code + placeholder immediately (light
+ *   chunk); libphonenumber utils load on first focus or after 4s idle
  * - POSTs JSON {firstName, lastName, email, phone, offerName} with the
  *   phone in full international format
  */
@@ -50,16 +50,30 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
   const honeypotRef = useRef(null)
   const phoneInputRef = useRef(null)
   const itiRef = useRef(null)
+  const moduleRef = useRef(null) // intl-tel-input factory (has attachUtils)
+  const utilsPromiseRef = useRef(null)
+  const utilsRequestedRef = useRef(false)
 
-  // Code-split: intl-tel-input (with its utils) loads on demand via a
-  // dynamic import, so it stays out of the initial JS bundle while the
-  // flag + country code still appear as soon as the page renders.
+  // Loads libphonenumber and attaches it to the widget. Called on first
+  // focus or after 4s idle — the field already renders its flag, dial
+  // code and placeholder without it.
+  const requestUtils = () => {
+    if (utilsRequestedRef.current || !moduleRef.current) return
+    utilsRequestedRef.current = true
+    utilsPromiseRef.current = moduleRef.current
+      .attachUtils(() => import('intl-tel-input/utils'))
+      .catch(() => null)
+  }
+
   useEffect(() => {
     if (!phoneInputRef.current) return
     let cancelled = false
     let iti = null
-    import('intl-tel-input/intlTelInputWithUtils').then(({ default: intlTelInput }) => {
+    const timers = []
+
+    import('intl-tel-input').then(({ default: intlTelInput }) => {
       if (cancelled || !phoneInputRef.current) return
+      moduleRef.current = intlTelInput
       iti = intlTelInput(phoneInputRef.current, {
         initialCountry: 'au', // visible default; switched to the visitor's country below
         separateDialCode: true,
@@ -73,18 +87,32 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
       const selectedCountry = container?.querySelector('.iti__selected-country')
       if (arrow && selectedCountry) selectedCountry.appendChild(arrow)
 
+      // Load the validation utils on first focus or after 4s idle.
+      const input = phoneInputRef.current
+      input.addEventListener('focus', requestUtils, { once: true })
+      timers.push(window.setTimeout(requestUtils, 4000))
+
       // Default to Australia, then switch to the visitor's country from
       // their IP once it resolves (never clobber a number already typed).
-      resolveCountry().then((cc) => {
-        if (cancelled || !cc || cc === 'au' || phoneInputRef.current.value) return
-        itiRef.current?.setSelectedCountry(cc)
-      })
+      // Delayed 2s so the lookup doesn't compete with critical resources.
+      timers.push(
+        window.setTimeout(() => {
+          resolveCountry().then((cc) => {
+            if (cancelled || !cc || cc === 'au' || phoneInputRef.current.value) return
+            itiRef.current?.setSelectedCountry(cc)
+          })
+        }, 2000),
+      )
     })
+
     return () => {
       cancelled = true
+      phoneInputRef.current?.removeEventListener('focus', requestUtils)
+      timers.forEach((t) => window.clearTimeout(t))
       iti?.destroy()
       itiRef.current = null
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const setField = (name) => (e) =>
@@ -100,8 +128,41 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
 
     // Phone condition: must be a valid number for the selected country.
     const iti = itiRef.current
-    const phone = iti?.getNumber()
-    if (!phone || !iti?.isValidNumber()) {
+    const rawValue = phoneInputRef.current?.value.trim() || ''
+
+    // isValidNumber() throws until the utils are attached, so probe
+    // defensively: null = utils still loading.
+    const tryValid = () => {
+      try {
+        return iti.isValidNumber()
+      } catch {
+        return null
+      }
+    }
+
+    let valid = iti ? tryValid() : true
+    if (valid === null) {
+      // Utils still loading — trigger now and wait briefly so we can
+      // validate instead of passing a garbage number through.
+      requestUtils()
+      for (let i = 0; i < 30 && valid === null; i += 1) {
+        await new Promise((resolve) => setTimeout(resolve, 100))
+        valid = tryValid()
+      }
+    }
+
+    let phone = null
+    try {
+      phone = iti?.getNumber() || null // throws until utils are attached
+    } catch {
+      phone = null
+    }
+    phone = phone || rawValue
+    if (!phone) {
+      setPhoneError('Please enter a valid phone number')
+      return
+    }
+    if (valid === false) {
       setPhoneError('Please enter a valid phone number')
       return
     }
@@ -208,6 +269,7 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
               id={`${idPrefix}-phone`}
               type="tel"
               name="phone"
+              placeholder="412 345 678"
               autoComplete="tel"
               aria-label="Phone number"
               required
