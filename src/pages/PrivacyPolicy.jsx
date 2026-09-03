@@ -6,7 +6,7 @@ import { SITE_URL, SITE_NAME, SUPPORT_EMAIL } from '../data/content'
 
 export default function PrivacyPolicy() {
   useMeta({
-    title: 'Privacy Policy — Rendaven',
+    title: 'Privacy Policy — How Rendaven Protects Your Data',
     description: 'How Rendaven collects, uses and protects your personal data.',
     canonical: `${SITE_URL}privacy`,
   })

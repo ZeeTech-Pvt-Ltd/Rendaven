@@ -7,6 +7,7 @@ export default function SignIn() {
   useMeta({
     title: 'Sign In — Rendaven Client Area',
     description: 'Sign in to your Rendaven account to access your trading dashboard.',
+    robots: 'noindex, nofollow',
     canonical: `${SITE_URL}sign-in`,
   })
 
@@ -21,7 +22,7 @@ export default function SignIn() {
     <section className="auth-wrap">
       <div className="container">
         <div className="form-card auth-card" data-reveal>
-          <h2>Welcome back</h2>
+          <h1 style={{ fontSize: 24, marginBottom: 8 }}>Welcome back</h1>
           <p>Sign in to your Rendaven account.</p>
 
           <form onSubmit={handleSubmit}>

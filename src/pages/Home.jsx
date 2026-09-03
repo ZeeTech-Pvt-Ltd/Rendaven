@@ -20,7 +20,9 @@ export default function Home() {
   useMeta({
     title: 'Rendaven — AI-Powered Crypto Trading Platform | Now in Australia',
     description:
-      'Rendaven is an AI-powered trading platform for Bitcoin, Ethereum and 300+ assets — with 256-bit encryption, 98% cold storage and 24/7 support. Now available in Australia.',
+      'Rendaven is an AI-powered trading platform for Bitcoin, Ethereum and 300+ assets. Secure, simple and now available in Australia.',
+    keywords:
+      'Rendaven, AI trading platform, crypto trading Australia, buy Bitcoin Australia, Ethereum trading, cryptocurrency exchange Australia, crypto analytics',
     canonical: SITE_URL,
   })
 

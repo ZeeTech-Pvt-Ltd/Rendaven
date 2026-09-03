@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom'
+import useMeta from '../hooks/useMeta'
 
 export default function NotFound() {
+  useMeta({
+    title: '404 — Page Not Found | Rendaven',
+    description: 'The page you are looking for does not exist or has moved. Head back to the Rendaven homepage.',
+    robots: 'noindex, nofollow',
+    // Canonical points at the actual URL the visitor landed on
+    canonical: typeof window !== 'undefined' ? window.location.href : undefined,
+  })
+
   return (
     <>
       <section className="page-hero">

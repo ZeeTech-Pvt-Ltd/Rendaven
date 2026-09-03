@@ -49,7 +49,8 @@
       "Bash(curl -s --max-time 20 -o solutions-640.avif \"https://marblerendaven.com/assets/img/responsive/blue/solutions-640.avif\")",
       "Bash(curl -s --max-time 20 -o benefits-640.avif \"https://marblerendaven.com/assets/img/responsive/blue/benefits-640.avif\")",
       "Bash(curl -s --max-time 10 \"https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,solana,ripple,cardano,dogecoin,binancecoin,tether&vs_currencies=usd&include_24hr_change=true\" -H \"Origin: http://localhost:5178\" -D - -o /tmp/price.json)",
-      "Bash(curl -s --max-time 20 -o footer-1280.avif \"https://marblerendaven.com/assets/img/responsive/blue/footer-1280.avif\")"
+      "Bash(curl -s --max-time 20 -o footer-1280.avif \"https://marblerendaven.com/assets/img/responsive/blue/footer-1280.avif\")",
+      "Bash(rm -f seo.mjs)"
     ],
     "additionalDirectories": [
       "\\tmp"

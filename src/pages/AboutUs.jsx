@@ -1,18 +1,21 @@
 import useMeta from '../hooks/useMeta'
 import Icon from '../components/Icon'
 import FinalCta from '../sections/FinalCta'
+import { BreadcrumbJsonLd } from '../components/JsonLd'
 import { SITE_URL, ABOUT_PAGE } from '../data/content'
 
 export default function AboutUs() {
   useMeta({
-    title: 'About Us — The Story Behind Rendaven',
+    title: 'About Rendaven — Our Story, Mission and Values',
     description:
       'Learn about Rendaven: an AI-powered trading platform built on bank-grade security, with a team dedicated to making trading simple for Australians.',
+    keywords: 'about Rendaven, crypto trading platform, AI trading company Australia, Rendaven story',
     canonical: `${SITE_URL}about-us`,
   })
 
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'About Us', slug: 'about-us' }]} />
       <section className="page-hero">
         <div className="container">
           <h1 data-reveal>About Rendaven</h1>

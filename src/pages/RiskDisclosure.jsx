@@ -6,7 +6,7 @@ import { SITE_URL, SITE_NAME } from '../data/content'
 
 export default function RiskDisclosure() {
   useMeta({
-    title: 'Risk Disclosure — Rendaven',
+    title: 'Risk Disclosure — Understanding Crypto & CFD Trading Risks',
     description: 'Important information about the risks of trading cryptocurrencies and leveraged instruments.',
     canonical: `${SITE_URL}risk-disclosure`,
   })

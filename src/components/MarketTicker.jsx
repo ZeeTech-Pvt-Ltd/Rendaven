@@ -58,7 +58,7 @@ export default function MarketTicker() {
               const up = price.usd_24h_change >= 0
               return (
                 <span className="ticker__item" key={coin.id}>
-                  <img src={coin.icon} alt="" loading="lazy" />
+                  <img src={coin.icon} alt={`${coin.symbol} logo`} loading="lazy" />
                   <span className="ticker__symbol">{coin.symbol}</span>
                   <span className="ticker__price">${formatPrice(price.usd)}</span>
                   <span className={`ticker__change ${up ? 'is-up' : 'is-down'}`}>

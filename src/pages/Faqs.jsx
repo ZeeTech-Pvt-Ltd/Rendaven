@@ -1,18 +1,23 @@
 import { Link } from 'react-router-dom'
 import FaqList from '../components/FaqList'
 import useMeta from '../hooks/useMeta'
-import { SITE_URL } from '../data/content'
+import { BreadcrumbJsonLd, FaqJsonLd } from '../components/JsonLd'
+import { SITE_URL, FAQS } from '../data/content'
 
 export default function Faqs() {
   useMeta({
-    title: 'FAQ — Frequently Asked Questions About Rendaven',
+    title: 'FAQs — Frequently Asked Questions About Rendaven',
     description:
       'Answers to the most common questions about Rendaven — account setup, security, assets, deposits and withdrawals.',
+    keywords: 'Rendaven FAQ, crypto trading questions, how to trade crypto Australia, Rendaven account help',
     canonical: `${SITE_URL}faq`,
   })
 
   return (
-    <section className="section section--mint">
+    <>
+      <BreadcrumbJsonLd items={[{ name: 'FAQs', slug: 'faq' }]} />
+      <FaqJsonLd faqs={FAQS} />
+      <section className="section section--mint">
       <div className="container">
         <div className="section-head">
           <span className="kicker" data-reveal>
@@ -35,5 +40,6 @@ export default function Faqs() {
         </p>
       </div>
     </section>
+    </>
   )
 }

@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { SITE_URL } from '../data/content'
 
 // Creates or updates a meta tag matched by attribute + key.
 function upsertMeta(attr, key, value) {
@@ -11,9 +12,10 @@ function upsertMeta(attr, key, value) {
   el.setAttribute('content', value)
 }
 
-// Sets the page title, description, canonical and social (OG/Twitter)
-// tags per route (SPA-friendly).
-export default function useMeta({ title, description, canonical }) {
+// Sets the page title, description, canonical, keywords, robots and social
+// (OG/Twitter) tags per route (SPA-friendly). Optional tags are cleared
+// when a page doesn't pass them.
+export default function useMeta({ title, description, canonical, keywords, robots, ogImage }) {
   useEffect(() => {
     if (title) {
       document.title = title
@@ -25,6 +27,16 @@ export default function useMeta({ title, description, canonical }) {
       upsertMeta('property', 'og:description', description)
       upsertMeta('name', 'twitter:description', description)
     }
+    upsertMeta('name', 'keywords', keywords || '')
+    if (robots) {
+      upsertMeta('name', 'robots', robots)
+    } else {
+      document.querySelector('meta[name="robots"]')?.remove()
+    }
+    // og:image per route, falling back to the shared social image
+    upsertMeta('property', 'og:image', ogImage || `${SITE_URL}og-image.png`)
+    upsertMeta('name', 'twitter:image', ogImage || `${SITE_URL}og-image.png`)
+
     const existing = document.querySelector('link[rel="canonical"]')
     if (canonical) {
       let link = existing
@@ -40,5 +52,5 @@ export default function useMeta({ title, description, canonical }) {
       existing?.remove()
       document.querySelector('meta[property="og:url"]')?.remove()
     }
-  }, [title, description, canonical])
+  }, [title, description, canonical, keywords, robots, ogImage])
 }

@@ -15,6 +15,7 @@ export default function SignUp() {
     title: 'Sign Up — Create Your Free Rendaven Account',
     description:
       'Create your free Rendaven account in under two minutes and start trading Bitcoin, Ethereum and 300+ assets with AI-powered insights.',
+    keywords: 'Rendaven sign up, open trading account Australia, crypto account registration, Rendaven registration',
     canonical: `${SITE_URL}sign-up`,
   })
 
@@ -26,9 +27,9 @@ export default function SignUp() {
             <span className="kicker kicker--chip" data-reveal>
               Join Rendaven
             </span>
-            <h2 data-reveal style={{ fontSize: 'clamp(30px, 3.6vw, 44px)', margin: '14px 0 20px' }}>
+            <h1 data-reveal style={{ fontSize: 'clamp(30px, 3.6vw, 44px)', margin: '14px 0 20px' }}>
               Create your free account today
-            </h2>
+            </h1>
             <p data-reveal style={{ fontSize: 17, color: 'var(--muted)', marginBottom: 26 }}>
               Opening an account takes less than two minutes. Our team will contact you to activate
               your account and guide you through your first trade.

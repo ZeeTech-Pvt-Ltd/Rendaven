@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import Icon from '../components/Icon'
 import RegistrationForm from '../components/RegistrationForm'
 import useMeta from '../hooks/useMeta'
+import { BreadcrumbJsonLd } from '../components/JsonLd'
 import { SITE_URL, SUPPORT_EMAIL, HERO } from '../data/content'
 
 const CONTACT_CARDS = [
@@ -30,14 +31,16 @@ const CONTACT_CARDS = [
 
 export default function Contacts() {
   useMeta({
-    title: 'Contacts — Get in Touch with the Rendaven Team',
+    title: 'Contact Us — Get in Touch with the Rendaven Team',
     description:
       'Contact the Rendaven team — support is available 24/7 by email, with a dedicated account manager for every client.',
+    keywords: 'contact Rendaven, crypto trading support Australia, Rendaven help, 24/7 trading support',
     canonical: `${SITE_URL}contact-us`,
   })
 
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'Contact Us', slug: 'contact-us' }]} />
       <section className="page-hero">
         <div className="container">
           <h1 data-reveal>Contact Us</h1>

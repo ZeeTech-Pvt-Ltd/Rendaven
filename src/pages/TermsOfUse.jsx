@@ -6,7 +6,7 @@ import { SITE_URL, SITE_NAME, SUPPORT_EMAIL } from '../data/content'
 
 export default function TermsOfUse() {
   useMeta({
-    title: 'Terms of Use — Rendaven',
+    title: 'Terms of Use — Your Agreement with Rendaven',
     description: 'The terms that govern your use of the Rendaven website and trading platform.',
     canonical: `${SITE_URL}terms`,
   })
