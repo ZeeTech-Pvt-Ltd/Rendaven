@@ -1,28 +1,28 @@
-import { StrictMode, lazy } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import App from './App'
 import './styles/global.css'
 
-// Pages are lazy-loaded per route to keep the initial bundle small —
-// Home is the entry bundle; everything else splits into its own chunk.
-// Loaders come from loaders.js so header/footer hover-prefetch shares
-// the exact same module (and browser cache) as navigation.
+// All pages are imported eagerly. They are tiny (1-4KB each), so this
+// adds ~15KB to the entry bundle — but it guarantees every page renders
+// on the first click/load on any hosting, with no chunk-fetch failures
+// or stale-cache mismatches (the previous lazy loading caused blank
+// pages that only appeared after clicking several times).
 import Home from './pages/Home'
-import { ROUTE_LOADERS } from './pages/loaders'
-const AboutUs = lazy(ROUTE_LOADERS['/about-us'])
-const Product = lazy(ROUTE_LOADERS['/product'])
-const Offer = lazy(ROUTE_LOADERS['/offer'])
-const Team = lazy(ROUTE_LOADERS['/team'])
-const Contacts = lazy(ROUTE_LOADERS['/contact-us'])
-const Faqs = lazy(ROUTE_LOADERS['/faq'])
-const SignUp = lazy(ROUTE_LOADERS['/sign-up'])
-const SignIn = lazy(ROUTE_LOADERS['/sign-in'])
-const ThankYou = lazy(ROUTE_LOADERS['/thank-you'])
-const PrivacyPolicy = lazy(ROUTE_LOADERS['/privacy'])
-const TermsOfUse = lazy(ROUTE_LOADERS['/terms'])
-const RiskDisclosure = lazy(ROUTE_LOADERS['/risk-disclosure'])
-const NotFound = lazy(() => import('./pages/NotFound'))
+import AboutUs from './pages/AboutUs'
+import Product from './pages/Product'
+import Offer from './pages/Offer'
+import Team from './pages/Team'
+import Contacts from './pages/Contacts'
+import Faqs from './pages/Faqs'
+import SignUp from './pages/SignUp'
+import SignIn from './pages/SignIn'
+import ThankYou from './pages/ThankYou'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import TermsOfUse from './pages/TermsOfUse'
+import RiskDisclosure from './pages/RiskDisclosure'
+import NotFound from './pages/NotFound'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

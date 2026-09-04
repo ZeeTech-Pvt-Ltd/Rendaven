@@ -3,7 +3,6 @@ import { NavLink, Link } from 'react-router-dom'
 import Logo from './Logo'
 import Icon from './Icon'
 import { NAV_LINKS } from '../data/content'
-import { prefetchRoute } from '../pages/loaders'
 
 export default function Header() {
   const [open, setOpen] = useState(false)
@@ -19,8 +18,6 @@ export default function Header() {
               key={item.label}
               to={item.to}
               end={item.to === '/'}
-              onMouseEnter={() => prefetchRoute(item.to)}
-              onFocus={() => prefetchRoute(item.to)}
               onClick={() => setOpen(false)}
             >
               {item.label}
@@ -29,12 +26,7 @@ export default function Header() {
         </nav>
 
         <div className="site-header__actions">
-          <Link
-            className="btn btn--gold"
-            to="/sign-up"
-            onMouseEnter={() => prefetchRoute('/sign-up')}
-            onClick={() => setOpen(false)}
-          >
+          <Link className="btn btn--gold" to="/sign-up" onClick={() => setOpen(false)}>
             Sign Up
           </Link>
           <button
@@ -51,22 +43,12 @@ export default function Header() {
 
       <nav className={`mobile-menu container${open ? ' is-open' : ''}`} aria-label="Mobile navigation">
         {NAV_LINKS.map((item) => (
-          <Link
-            key={item.label}
-            to={item.to}
-            onTouchStart={() => prefetchRoute(item.to)}
-            onClick={() => setOpen(false)}
-          >
+          <Link key={item.label} to={item.to} onClick={() => setOpen(false)}>
             {item.label}
           </Link>
         ))}
         <div className="mobile-menu__actions">
-          <Link
-            className="btn btn--gold btn--block"
-            to="/sign-up"
-            onTouchStart={() => prefetchRoute('/sign-up')}
-            onClick={() => setOpen(false)}
-          >
+          <Link className="btn btn--gold btn--block" to="/sign-up" onClick={() => setOpen(false)}>
             Sign Up
           </Link>
         </div>

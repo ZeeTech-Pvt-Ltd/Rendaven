@@ -89,7 +89,9 @@
       "Bash(CHROME_PATH=\"C:\\\\Users\\\\samee\\\\AppData\\\\Local\\\\ms-playwright\\\\chromium-1217\\\\chrome-win64\\\\chrome.exe\" npx --yes lighthouse \"http://localhost:4173/\" --only-categories=performance,accessibility,best-practices,seo --form-factor=mobile --screenEmulation.mobile --output=json --output-path=lhfinal.json --chrome-flags=\"--headless --no-sandbox\" --quiet)",
       "Bash(rm lhfinal.json)",
       "Bash(curl -s --max-time 5 http://localhost:4173/)",
-      "Bash(curl -s --max-time 5 http://localhost:4174/)"
+      "Bash(curl -s --max-time 5 http://localhost:4174/)",
+      "Bash(CHROME_PATH=\"C:\\\\Users\\\\samee\\\\AppData\\\\Local\\\\ms-playwright\\\\chromium-1217\\\\chrome-win64\\\\chrome.exe\" npx --yes lighthouse \"http://localhost:4174/\" --only-categories=performance --form-factor=mobile --screenEmulation.mobile --output=json --output-path=lhe.json --chrome-flags=\"--headless --no-sandbox\" --quiet)",
+      "Bash(rm lhe.json)"
     ],
     "additionalDirectories": [
       "\\tmp",
