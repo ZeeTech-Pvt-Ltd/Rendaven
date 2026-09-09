@@ -2,11 +2,11 @@ import LegalPage from '../components/LegalPage'
 import useMeta from '../hooks/useMeta'
 import { SITE_URL, SITE_NAME, SUPPORT_EMAIL } from '../data/content'
 
-// Template text — review with legal counsel before launch.
+// Template text - review with legal counsel before launch.
 
 export default function PrivacyPolicy() {
   useMeta({
-    title: 'Privacy Policy — How Rendaven Protects Your Data',
+    title: 'Privacy Policy - How Rendaven Protects Your Data',
     description: 'How Rendaven collects, uses and protects your personal data.',
     canonical: `${SITE_URL}privacy`,
   })

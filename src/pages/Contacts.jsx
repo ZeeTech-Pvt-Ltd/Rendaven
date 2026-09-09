@@ -9,7 +9,7 @@ const CONTACT_CARDS = [
   {
     icon: 'mail',
     title: 'Email us',
-    text: `Write to ${SUPPORT_EMAIL} — we reply within one business day.`,
+    text: `Write to ${SUPPORT_EMAIL} - we reply within one business day.`,
     href: `mailto:${SUPPORT_EMAIL}`,
   },
   {
@@ -31,9 +31,9 @@ const CONTACT_CARDS = [
 
 export default function Contacts() {
   useMeta({
-    title: 'Contact Us — Get in Touch with the Rendaven Team',
+    title: 'Contact Us - Get in Touch with the Rendaven Team',
     description:
-      'Contact the Rendaven team — support is available 24/7 by email, with a dedicated account manager for every client.',
+      'Contact the Rendaven team - support is available 24/7 by email, with a dedicated account manager for every client.',
     keywords: 'contact Rendaven, crypto trading support Australia, Rendaven help, 24/7 trading support',
     canonical: `${SITE_URL}contact-us`,
   })
@@ -93,13 +93,13 @@ export default function Contacts() {
               <h2 data-reveal>Register and a manager will reach out to you</h2>
               <p data-reveal>
                 Fill in the form and one of our account managers will contact you shortly to
-                activate your account and answer any questions you have — no obligation, no
+                activate your account and answer any questions you have - no obligation, no
                 pressure.
               </p>
               <ul className="join__points">
                 <li data-reveal>
                   <Icon name="check" size={19} strokeWidth={2.6} />
-                  Free registration — cancel anytime
+                  Free registration - cancel anytime
                 </li>
                 <li data-reveal>
                   <Icon name="check" size={19} strokeWidth={2.6} />

@@ -1,4 +1,4 @@
-// Shared wrapper for the legal pages (template text — needs lawyer review
+// Shared wrapper for the legal pages (template text - needs lawyer review
 // before launch).
 
 export default function LegalPage({ title, updated, children }) {

@@ -6,9 +6,9 @@ import { SITE_URL, FAQS } from '../data/content'
 
 export default function Faqs() {
   useMeta({
-    title: 'FAQs — Frequently Asked Questions About Rendaven',
+    title: 'FAQs - Frequently Asked Questions About Rendaven',
     description:
-      'Answers to the most common questions about Rendaven — account setup, security, assets, deposits and withdrawals.',
+      'Answers to the most common questions about Rendaven - account setup, security, assets, deposits and withdrawals.',
     keywords: 'Rendaven FAQ, crypto trading questions, how to trade crypto Australia, Rendaven account help',
     canonical: `${SITE_URL}faq`,
   })
@@ -36,7 +36,7 @@ export default function Faqs() {
           <Link to="/contact-us" style={{ fontWeight: 600 }}>
             Contact our team
           </Link>{' '}
-          — we are here 24/7.
+          - we are here 24/7.
         </p>
       </div>
     </section>

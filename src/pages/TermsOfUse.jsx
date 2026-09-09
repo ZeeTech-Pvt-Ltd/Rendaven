@@ -2,11 +2,11 @@ import LegalPage from '../components/LegalPage'
 import useMeta from '../hooks/useMeta'
 import { SITE_URL, SITE_NAME, SUPPORT_EMAIL } from '../data/content'
 
-// Template text — review with legal counsel before launch.
+// Template text - review with legal counsel before launch.
 
 export default function TermsOfUse() {
   useMeta({
-    title: 'Terms of Use — Your Agreement with Rendaven',
+    title: 'Terms of Use - Your Agreement with Rendaven',
     description: 'The terms that govern your use of the Rendaven website and trading platform.',
     canonical: `${SITE_URL}terms`,
   })
@@ -42,8 +42,8 @@ export default function TermsOfUse() {
 
       <h2>4. No Investment Advice</h2>
       <p>
-        Nothing on the {SITE_NAME} platform — including AI-generated signals, educational content,
-        statistics or projections — constitutes investment advice, a recommendation, or an offer to
+        Nothing on the {SITE_NAME} platform - including AI-generated signals, educational content,
+        statistics or projections - constitutes investment advice, a recommendation, or an offer to
         buy or sell any financial instrument. All trading decisions are yours alone.
       </p>
 

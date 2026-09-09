@@ -7,9 +7,9 @@ import { SITE_URL, PRODUCT_PAGE } from '../data/content'
 
 export default function Product() {
   useMeta({
-    title: 'Rendaven Trading Platform — Tools, Analytics and Security',
+    title: 'Rendaven Trading Platform - Tools, Analytics and Security',
     description:
-      'Explore the Rendaven trading platform: manage cryptocurrencies, track your portfolio, trade 300+ markets and access AI-driven analytics — from any device.',
+      'Explore the Rendaven trading platform: manage cryptocurrencies, track your portfolio, trade 300+ markets and access AI-driven analytics - from any device.',
     keywords:
       'Rendaven product, crypto analytics platform, portfolio management, buy cryptocurrency Australia, crypto trading tools',
     canonical: `${SITE_URL}product`,
@@ -39,7 +39,7 @@ export default function Product() {
             {PRODUCT_PAGE.features.map((feature, i) => (
               <div className="card" key={feature.title} data-reveal style={{ transitionDelay: `${(i % 3) * 70}ms` }}>
                 {feature.img ? (
-                  <img className="card__img" src={feature.img} alt={`${feature.title} — Rendaven platform feature`} loading="lazy" />
+                  <img className="card__img" src={feature.img} alt={`${feature.title} - Rendaven platform feature`} loading="lazy" />
                 ) : (
                   <span className="card__icon">
                     <Icon name={feature.icon} size={24} strokeWidth={1.9} />

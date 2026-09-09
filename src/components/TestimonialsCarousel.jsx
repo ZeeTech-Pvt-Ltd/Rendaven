@@ -51,7 +51,7 @@ export default function TestimonialsCarousel() {
     [pages],
   )
 
-  // Autoplay — paused while the pointer hovers or focus is inside.
+  // Autoplay - paused while the pointer hovers or focus is inside.
   useEffect(() => {
     if (paused) return
     const id = setInterval(() => goTo(index + 1), AUTOPLAY_MS)

@@ -5,7 +5,7 @@ import { CALCULATOR } from '../data/content'
 const MIN = 250
 const MAX = 50000
 const STEP = 250
-const MONTHLY_RATE = 0.085 // illustrative — matches the "85%" platform claim
+const MONTHLY_RATE = 0.085 // illustrative - matches the "85%" platform claim
 const MONTHS = 12
 
 const money = new Intl.NumberFormat('en-AU', {

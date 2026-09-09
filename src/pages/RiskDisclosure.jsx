@@ -2,11 +2,11 @@ import LegalPage from '../components/LegalPage'
 import useMeta from '../hooks/useMeta'
 import { SITE_URL, SITE_NAME } from '../data/content'
 
-// Template text — review with legal counsel before launch.
+// Template text - review with legal counsel before launch.
 
 export default function RiskDisclosure() {
   useMeta({
-    title: 'Risk Disclosure — Understanding Crypto & CFD Trading Risks',
+    title: 'Risk Disclosure - Understanding Crypto & CFD Trading Risks',
     description: 'Important information about the risks of trading cryptocurrencies and leveraged instruments.',
     canonical: `${SITE_URL}risk-disclosure`,
   })
@@ -23,14 +23,14 @@ export default function RiskDisclosure() {
       <p>
         The value of digital assets and other traded instruments can be highly volatile. Prices can
         move dramatically within short periods, and you may sustain a total loss of your invested
-        funds. Leveraged products can amplify both gains and losses — losses can exceed your
+        funds. Leveraged products can amplify both gains and losses - losses can exceed your
         initial deposit.
       </p>
 
       <h2>No Guarantee of Profit</h2>
       <p>
-        No trading strategy, AI model, signal or projection — including the accuracy statistics and
-        earnings projections displayed on our website — can guarantee profit. Past performance and
+        No trading strategy, AI model, signal or projection - including the accuracy statistics and
+        earnings projections displayed on our website - can guarantee profit. Past performance and
         historical accuracy rates are not indicative of future results.
       </p>
 

@@ -53,7 +53,7 @@ async function loadPrices() {
     if (!res.ok) throw new Error(`gecko ${res.status}`)
     return fromCoinGecko(await res.json())
   } catch {
-    // CoinGecko rate-limits aggressively in dev — fall back to Binance
+    // CoinGecko rate-limits aggressively in dev - fall back to Binance
     const res = await fetch(BINANCE_URL)
     if (!res.ok) throw new Error(`binance ${res.status}`)
     return fromBinance(await res.json())
@@ -71,7 +71,7 @@ export default function MarketTicker() {
           if (!cancelled) setPrices(data)
         })
         .catch(() => {
-          // both providers unavailable — keep showing the last good prices
+          // both providers unavailable - keep showing the last good prices
         })
     load()
     const interval = setInterval(load, 90000)

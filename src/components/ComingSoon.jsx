@@ -11,7 +11,7 @@ export default function ComingSoon({ title, description }) {
         </div>
         <h1>{title}</h1>
         <p>
-          {description} This page is part of the next iteration of rendaven.com — check back soon.
+          {description} This page is part of the next iteration of rendaven.com - check back soon.
         </p>
         <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
           <Link className="btn btn--gold" to="/">

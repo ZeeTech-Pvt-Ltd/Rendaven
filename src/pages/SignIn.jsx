@@ -5,7 +5,7 @@ import { SITE_URL } from '../data/content'
 
 export default function SignIn() {
   useMeta({
-    title: 'Sign In — Rendaven Client Area',
+    title: 'Sign In - Rendaven Client Area',
     description: 'Sign in to your Rendaven account to access your trading dashboard.',
     robots: 'noindex, nofollow',
     canonical: `${SITE_URL}sign-in`,
@@ -45,7 +45,7 @@ export default function SignIn() {
             {submitted && (
               <div className="auth-note" role="status">
                 Account access is activated by our team after your registration is verified. If you
-                already registered, check your email for your activation link — or contact{' '}
+                already registered, check your email for your activation link - or contact{' '}
                 <a href="mailto:support@rendaven.com">support@rendaven.com</a>.
               </div>
             )}

@@ -4,7 +4,7 @@ import useMeta from '../hooks/useMeta'
 import { SITE_URL } from '../data/content'
 
 const POINTS = [
-  'Free registration — no hidden fees to open an account',
+  'Free registration - no hidden fees to open an account',
   'AI-driven signals with an 85% accuracy rate',
   '98% of assets held in offline cold storage',
   'Withdraw your funds whenever you want',
@@ -12,7 +12,7 @@ const POINTS = [
 
 export default function SignUp() {
   useMeta({
-    title: 'Sign Up — Create Your Free Rendaven Account',
+    title: 'Sign Up - Create Your Free Rendaven Account',
     description:
       'Create your free Rendaven account in under two minutes and start trading Bitcoin, Ethereum and 300+ assets with AI-powered insights.',
     keywords: 'Rendaven sign up, open trading account Australia, crypto account registration, Rendaven registration',

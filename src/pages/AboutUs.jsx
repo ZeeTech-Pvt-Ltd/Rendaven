@@ -6,7 +6,7 @@ import { SITE_URL, ABOUT_PAGE } from '../data/content'
 
 export default function AboutUs() {
   useMeta({
-    title: 'About Rendaven — Our Story, Mission and Values',
+    title: 'About Rendaven - Our Story, Mission and Values',
     description:
       'Learn about Rendaven: an AI-powered trading platform built on bank-grade security, with a team dedicated to making trading simple for Australians.',
     keywords: 'about Rendaven, crypto trading platform, AI trading company Australia, Rendaven story',
@@ -20,7 +20,7 @@ export default function AboutUs() {
         <div className="container">
           <h1 data-reveal>About Rendaven</h1>
           <p data-reveal>
-            We built Rendaven to make world-class trading simple, secure and accessible — powered by
+            We built Rendaven to make world-class trading simple, secure and accessible - powered by
             an AI engine, protected by bank-grade security.
           </p>
         </div>

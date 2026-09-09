@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Rendaven — "cobalt blueprint" design system
+   Rendaven - "cobalt blueprint" design system
    Blue palette from the reference site (royal #0150cf, navy #002867,
    ice #f9fbff) with a unique engineered identity: blueprint grids,
    chamfered corners, corner-bracket cards, Chakra Petch type.
@@ -11,12 +11,12 @@
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'Chakra Petch', ui-monospace, monospace;
 
-  /* Palette — reference blue */
-  --teal: #0150cf; /* royal blue — links, accents, focus */
+  /* Palette - reference blue */
+  --teal: #0150cf; /* royal blue - links, accents, focus */
   --teal-dark: #003f9f; /* hover */
   --teal-deep: #002867; /* navy bands (hero, how it works, security, final CTA) */
   --teal-deeper: #001a45; /* footer */
-  --gold: #0150cf; /* primary CTA — royal blue */
+  --gold: #0150cf; /* primary CTA - royal blue */
   --gold-dark: #003f9f; /* CTA hover */
   --gold-soft: #e8f1ff; /* soft blue chips */
   --gold-pale: #f3f8ff; /* blue tint */
@@ -262,7 +262,7 @@ input {
   transform: translateY(-1px);
 }
 
-/* Inner ring instead of the default outline — a chamfered button clips it */
+/* Inner ring instead of the default outline - a chamfered button clips it */
 .btn:focus-visible {
   outline: 2.5px solid currentColor;
   outline-offset: -5px;
@@ -365,7 +365,7 @@ input {
   transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-/* Corner brackets — engineered viewfinder detail */
+/* Corner brackets - engineered viewfinder detail */
 .card::before,
 .card::after {
   content: '';
@@ -2279,7 +2279,7 @@ img.testi-card__avatar {
   }
 }
 
-/* Logo + hamburger are all that fit below 360px — Sign Up lives in the mobile menu */
+/* Logo + hamburger are all that fit below 360px - Sign Up lives in the mobile menu */
 @media (max-width: 360px) {
   .site-header__actions .btn--gold {
     display: none;

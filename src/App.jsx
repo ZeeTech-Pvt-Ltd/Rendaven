@@ -13,7 +13,7 @@ function ScrollToTop() {
   return null
 }
 
-// Shown while a lazy route chunk loads — visible feedback instead of a
+// Shown while a lazy route chunk loads - visible feedback instead of a
 // blank page on slow connections.
 function PageFallback() {
   return (

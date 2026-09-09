@@ -27,7 +27,7 @@ async function resolveCountry() {
       const cc = await source()
       if (cc) return cc.toLowerCase()
     } catch {
-      // blocked / offline — try the next source
+      // blocked / offline - try the next source
     }
   }
   return null
@@ -55,7 +55,7 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
   const utilsRequestedRef = useRef(false)
 
   // Loads libphonenumber and attaches it to the widget. Called on first
-  // focus or after 4s idle — the field already renders its flag, dial
+  // focus or after 4s idle - the field already renders its flag, dial
   // code and placeholder without it.
   const requestUtils = () => {
     if (utilsRequestedRef.current || !moduleRef.current) return
@@ -142,7 +142,7 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
 
     let valid = iti ? tryValid() : true
     if (valid === null) {
-      // Utils still loading — trigger now and wait briefly so we can
+      // Utils still loading - trigger now and wait briefly so we can
       // validate instead of passing a garbage number through.
       requestUtils()
       for (let i = 0; i < 30 && valid === null; i += 1) {
@@ -207,7 +207,7 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
       {title && <h2>{title}</h2>}
       {subtitle && <p>{subtitle}</p>}
       <form onSubmit={handleSubmit}>
-        {/* Honeypot — hidden from real users, bots fill it and get dropped */}
+        {/* Honeypot - hidden from real users, bots fill it and get dropped */}
         <input
           ref={honeypotRef}
           className="visually-hidden"

@@ -39,7 +39,7 @@ function BelowTheFold({ children }) {
 
 export default function Home() {
   useMeta({
-    title: 'Rendaven — AI-Powered Crypto Trading Platform | Now in Australia',
+    title: 'Rendaven - AI-Powered Crypto Trading Platform | Now in Australia',
     description:
       'Rendaven is an AI-powered trading platform for Bitcoin, Ethereum and 300+ assets. Secure, simple and now available in Australia.',
     keywords:

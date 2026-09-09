@@ -4,7 +4,7 @@ import { SITE_URL } from '../data/content'
 
 export default function Team() {
   useMeta({
-    title: 'Our Team — The People Behind Rendaven',
+    title: 'Our Team - The People Behind Rendaven',
     description: 'Meet the trading, engineering and support professionals behind Rendaven.',
     canonical: `${SITE_URL}team`,
   })

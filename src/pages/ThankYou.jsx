@@ -5,7 +5,7 @@ import { SITE_URL } from '../data/content'
 
 export default function ThankYou() {
   useMeta({
-    title: 'Thank You — Your Rendaven Registration Is Received',
+    title: 'Thank You - Your Rendaven Registration Is Received',
     description: 'Your Rendaven registration has been received. Our team will contact you shortly.',
     robots: 'noindex, nofollow',
     canonical: `${SITE_URL}thank-you`,

@@ -5,7 +5,7 @@ import App from './App'
 import './styles/global.css'
 
 // All pages are imported eagerly. They are tiny (1-4KB each), so this
-// adds ~15KB to the entry bundle — but it guarantees every page renders
+// adds ~15KB to the entry bundle - but it guarantees every page renders
 // on the first click/load on any hosting, with no chunk-fetch failures
 // or stale-cache mismatches (the previous lazy loading caused blank
 // pages that only appeared after clicking several times).
