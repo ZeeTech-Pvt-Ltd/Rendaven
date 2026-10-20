@@ -2287,3 +2287,14 @@ html.js [data-reveal].is-visible {
     display: none;
   }
 }
+
+/* Eight nav links need tighter padding to fit between the 1024px
+   mobile breakpoint and the full 1224px container */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .site-header__nav {
+    gap: 4px;
+  }
+  .site-header__nav a {
+    padding: 9px 9px;
+  }
+}
