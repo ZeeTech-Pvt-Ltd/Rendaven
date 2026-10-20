@@ -1,5 +1,6 @@
+'use client'
 import { useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useRouter } from 'next/navigation'
 import 'intl-tel-input/styles'
 import Icon from './Icon'
 import { FORM_ENDPOINT, OFFER_NAME } from '../data/content'
@@ -43,7 +44,7 @@ async function resolveCountry() {
  *   phone in full international format
  */
 export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) {
-  const navigate = useNavigate()
+  const router = useRouter()
   const [fields, setFields] = useState(initialFields)
   const [status, setStatus] = useState(STATUS.idle)
   const [phoneError, setPhoneError] = useState('')
@@ -185,7 +186,7 @@ export default function RegistrationForm({ idPrefix = 'reg', title, subtitle }) 
       setStatus(STATUS.success)
       setFields(initialFields)
       iti?.setNumber('')
-      navigate('/thank-you')
+      router.push('/thank-you')
     } catch {
       // Endpoint rate-limits to 3 attempts / 5 min per IP.
       setStatus(STATUS.error)

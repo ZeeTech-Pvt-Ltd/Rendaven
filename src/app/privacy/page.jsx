@@ -1,16 +1,16 @@
-import LegalPage from '../components/LegalPage'
-import useMeta from '../hooks/useMeta'
-import { SITE_URL, SITE_NAME, SUPPORT_EMAIL } from '../data/content'
+import LegalPage from '@/components/LegalPage'
+import { SITE_NAME, SUPPORT_EMAIL } from '@/data/content'
+import { pageMeta } from '@/lib/page-meta'
 
 // Template text - review with legal counsel before launch.
 
-export default function PrivacyPolicy() {
-  useMeta({
-    title: 'Privacy Policy - How Rendaven Protects Your Data',
-    description: 'How Rendaven collects, uses and protects your personal data.',
-    canonical: `${SITE_URL}privacy`,
-  })
+export const metadata = pageMeta({
+  title: 'Privacy Policy - How Rendaven Protects Your Data',
+  description: 'How Rendaven collects, uses and protects your personal data.',
+  slug: 'privacy',
+})
 
+export default function PrivacyPolicy() {
   return (
     <LegalPage title="Privacy Policy" updated="September 3, 2026">
       <p>

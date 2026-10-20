@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useState } from 'react'
 
 // Live prices with a provider fallback chain (all CORS-open, no keys):

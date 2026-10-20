@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import Logo from './Logo'
 import Icon from './Icon'
 import { NAV_LINKS, FOOTER, SUPPORT_EMAIL } from '../data/content'
@@ -18,7 +18,7 @@ export default function Footer() {
             <ul>
               {NAV_LINKS.filter((item) => item.to !== '/').map((item) => (
                 <li key={item.label}>
-                  <Link to={item.to}>{item.label}</Link>
+                  <Link href={item.to}>{item.label}</Link>
                 </li>
               ))}
             </ul>
@@ -29,7 +29,7 @@ export default function Footer() {
             <ul>
               {FOOTER.legalLinks.map((item) => (
                 <li key={item.label}>
-                  <Link to={item.to}>{item.label}</Link>
+                  <Link href={item.to}>{item.label}</Link>
                 </li>
               ))}
             </ul>
@@ -64,7 +64,7 @@ export default function Footer() {
           <span>{FOOTER.copyright}</span>
           <div className="footer-bottom__links">
             {FOOTER.legalLinks.map((item) => (
-              <Link key={item.label} to={item.to}>
+              <Link key={item.label} href={item.to}>
                 {item.label}
               </Link>
             ))}

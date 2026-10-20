@@ -1,6 +1,10 @@
 node_modules
 dist
 dist-ssr
+
+# Next.js
+.next
+next-env.d.ts
 *.local
 .DS_Store
 

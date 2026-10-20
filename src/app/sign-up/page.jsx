@@ -1,7 +1,6 @@
-import Icon from '../components/Icon'
-import RegistrationForm from '../components/RegistrationForm'
-import useMeta from '../hooks/useMeta'
-import { SITE_URL } from '../data/content'
+import Icon from '@/components/Icon'
+import RegistrationForm from '@/components/RegistrationForm'
+import { pageMeta } from '@/lib/page-meta'
 
 const POINTS = [
   'Free registration - no hidden fees to open an account',
@@ -10,15 +9,15 @@ const POINTS = [
   'Withdraw your funds whenever you want',
 ]
 
-export default function SignUp() {
-  useMeta({
-    title: 'Sign Up - Create Your Free Rendaven Account',
-    description:
-      'Create your free Rendaven account in under two minutes and start trading Bitcoin, Ethereum and 300+ assets with AI-powered insights.',
-    keywords: 'Rendaven sign up, open trading account Australia, crypto account registration, Rendaven registration',
-    canonical: `${SITE_URL}sign-up`,
-  })
+export const metadata = pageMeta({
+  title: 'Sign Up - Create Your Free Rendaven Account',
+  description:
+    'Create your free Rendaven account in under two minutes and start trading Bitcoin, Ethereum and 300+ assets with AI-powered insights.',
+  keywords: 'Rendaven sign up, open trading account Australia, crypto account registration, Rendaven registration',
+  slug: 'sign-up',
+})
 
+export default function SignUp() {
   return (
     <section className="auth-wrap">
       <div className="container">

@@ -1,11 +1,12 @@
+'use client'
 import { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { usePathname } from 'next/navigation'
 
 // Observes [data-reveal] elements on each route and fades them in as they
 // enter the viewport. Re-runs on navigation, and rescans whenever deferred
 // content mounts (a 'reveal:rescan' window event) so it animates too.
-export default function useReveal() {
-  const { pathname } = useLocation()
+export default function RevealObserver() {
+  const pathname = usePathname()
 
   useEffect(() => {
     let observer = null
@@ -35,4 +36,6 @@ export default function useReveal() {
       observer?.disconnect()
     }
   }, [pathname])
+
+  return null
 }

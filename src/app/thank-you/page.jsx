@@ -1,16 +1,15 @@
-import { Link } from 'react-router-dom'
-import Icon from '../components/Icon'
-import useMeta from '../hooks/useMeta'
-import { SITE_URL } from '../data/content'
+import Link from 'next/link'
+import Icon from '@/components/Icon'
+import { pageMeta } from '@/lib/page-meta'
+
+export const metadata = pageMeta({
+  title: 'Thank You - Your Rendaven Registration Is Received',
+  description: 'Your Rendaven registration has been received. Our team will contact you shortly.',
+  slug: 'thank-you',
+  robots: { index: false, follow: false },
+})
 
 export default function ThankYou() {
-  useMeta({
-    title: 'Thank You - Your Rendaven Registration Is Received',
-    description: 'Your Rendaven registration has been received. Our team will contact you shortly.',
-    robots: 'noindex, nofollow',
-    canonical: `${SITE_URL}thank-you`,
-  })
-
   return (
     <section className="centered-page">
       <div className="container">
@@ -23,10 +22,10 @@ export default function ThankYou() {
           Rendaven account and guide you through your first trade.
         </p>
         <div data-reveal style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap' }}>
-          <Link className="btn btn--gold" to="/">
+          <Link className="btn btn--gold" href="/">
             Back to home
           </Link>
-          <Link className="btn btn--ghost" to="/faq">
+          <Link className="btn btn--ghost" href="/faq">
             Read the FAQ
           </Link>
         </div>

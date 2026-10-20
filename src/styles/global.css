@@ -6,10 +6,9 @@
    ========================================================================== */
 
 :root {
-  /* Fonts */
-  --font-display: 'Chakra Petch', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-mono: 'Chakra Petch', ui-monospace, monospace;
+  /* Fonts: --font-display and --font-body are injected by next/font on <html>;
+     --font-mono reuses the same family (Chakra Petch) */
+  --font-mono: var(--font-display);
 
   /* Palette - reference blue */
   --teal: #0150cf; /* royal blue - links, accents, focus */
@@ -2123,14 +2122,17 @@ img.testi-card__avatar {
 
 /* ------------------------------ Reveal --------------------------------- */
 
-[data-reveal] {
+/* Scoped under html.js so content stays visible without JavaScript
+   (the .js class is added by an inline script in the root layout). */
+
+html.js [data-reveal] {
   opacity: 0;
   transform: translateY(26px);
   transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-[data-reveal].is-visible {
+html.js [data-reveal].is-visible {
   opacity: 1;
   transform: none;
 }
@@ -2140,7 +2142,7 @@ img.testi-card__avatar {
     scroll-behavior: auto;
   }
 
-  [data-reveal] {
+  html.js [data-reveal] {
     opacity: 1;
     transform: none;
     transition: none;

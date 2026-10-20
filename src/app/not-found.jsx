@@ -1,15 +1,11 @@
-import { Link } from 'react-router-dom'
-import useMeta from '../hooks/useMeta'
+import Link from 'next/link'
+
+export const metadata = {
+  title: '404 - Page Not Found | Rendaven',
+  description: 'The page you are looking for does not exist or has moved. Head back to the Rendaven homepage.',
+}
 
 export default function NotFound() {
-  useMeta({
-    title: '404 - Page Not Found | Rendaven',
-    description: 'The page you are looking for does not exist or has moved. Head back to the Rendaven homepage.',
-    robots: 'noindex, nofollow',
-    // Canonical points at the actual URL the visitor landed on
-    canonical: typeof window !== 'undefined' ? window.location.href : undefined,
-  })
-
   return (
     <>
       <section className="page-hero">
@@ -23,10 +19,10 @@ export default function NotFound() {
             back to safety.
           </p>
           <div className="final-cta__actions" data-reveal>
-            <Link className="btn btn--gold btn--lg" to="/">
+            <Link className="btn btn--gold btn--lg" href="/">
               Back to home
             </Link>
-            <Link className="btn btn--ghost-dark btn--lg" to="/sign-up">
+            <Link className="btn btn--ghost-dark btn--lg" href="/sign-up">
               Create an account
             </Link>
           </div>
@@ -39,10 +35,10 @@ export default function NotFound() {
             You might be looking for one of these:
           </p>
           <div className="nf-links" data-reveal>
-            <Link to="/product">Product</Link>
-            <Link to="/about-us">About Us</Link>
-            <Link to="/faq">FAQs</Link>
-            <Link to="/contact-us">Contact Us</Link>
+            <Link href="/product">Product</Link>
+            <Link href="/about-us">About Us</Link>
+            <Link href="/faq">FAQs</Link>
+            <Link href="/contact-us">Contact Us</Link>
           </div>
         </div>
       </section>

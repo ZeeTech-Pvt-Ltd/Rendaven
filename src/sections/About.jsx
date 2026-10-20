@@ -1,11 +1,21 @@
-import { Link, useLocation } from 'react-router-dom'
+import Link from 'next/link'
 import Icon from '../components/Icon'
 import { ABOUT } from '../data/content'
 
-export default function About() {
-  const { pathname } = useLocation()
+export default function About({ home = false }) {
   // On the homepage this scrolls to the #register form; elsewhere it routes.
-  const ctaLink = pathname === '/' ? { href: '#register' } : { to: '/sign-up' }
+  const cta = home ? (
+    <a className="btn btn--teal" href="#register">
+      Get started
+      <Icon name="arrow-right" size={18} />
+    </a>
+  ) : (
+    <Link className="btn btn--teal" href="/sign-up">
+      Get started
+      <Icon name="arrow-right" size={18} />
+    </Link>
+  )
+
   return (
     <section className="section" id="about">
       <div className="container">
@@ -24,19 +34,7 @@ export default function About() {
                 </li>
               ))}
             </ul>
-            <div data-reveal>
-              {ctaLink.to ? (
-                <Link className="btn btn--teal" to={ctaLink.to}>
-                  Get started
-                  <Icon name="arrow-right" size={18} />
-                </Link>
-              ) : (
-                <a className="btn btn--teal" href={ctaLink.href}>
-                  Get started
-                  <Icon name="arrow-right" size={18} />
-                </a>
-              )}
-            </div>
+            <div data-reveal>{cta}</div>
           </div>
 
           <div className="about__art" data-reveal>

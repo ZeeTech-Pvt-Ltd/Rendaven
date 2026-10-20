@@ -1,16 +1,16 @@
-import LegalPage from '../components/LegalPage'
-import useMeta from '../hooks/useMeta'
-import { SITE_URL, SITE_NAME, SUPPORT_EMAIL } from '../data/content'
+import LegalPage from '@/components/LegalPage'
+import { SITE_NAME, SUPPORT_EMAIL } from '@/data/content'
+import { pageMeta } from '@/lib/page-meta'
 
 // Template text - review with legal counsel before launch.
 
-export default function TermsOfUse() {
-  useMeta({
-    title: 'Terms of Use - Your Agreement with Rendaven',
-    description: 'The terms that govern your use of the Rendaven website and trading platform.',
-    canonical: `${SITE_URL}terms`,
-  })
+export const metadata = pageMeta({
+  title: 'Terms of Use - Your Agreement with Rendaven',
+  description: 'The terms that govern your use of the Rendaven website and trading platform.',
+  slug: 'terms',
+})
 
+export default function TermsOfUse() {
   return (
     <LegalPage title="Terms of Use" updated="September 3, 2026">
       <p>
