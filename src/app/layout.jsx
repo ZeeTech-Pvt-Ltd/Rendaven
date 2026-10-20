@@ -44,6 +44,7 @@ const SITE_JSON_LD = {
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
+  icons: { icon: '/favicon.svg' },
   title: { default: 'Rendaven - AI-Powered Crypto Trading Platform | Now in Australia' },
   description:
     'Rendaven is an AI-powered trading platform for Bitcoin, Ethereum and 300+ assets. Secure, simple and now available in Australia.',
